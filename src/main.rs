@@ -2,7 +2,6 @@ pub mod ledger;
 use crate::ledger::init_bank;
 
 fn main() {
-    //Read in arguments
     let args: Vec<String> = std::env::args().collect();
     //Check if the argument count is 4
     if args.len() != 4 {

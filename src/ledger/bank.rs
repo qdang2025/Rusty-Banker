@@ -1,7 +1,6 @@
 use std::sync::{Mutex, Arc};
 
 pub struct Account {
-    //account_id: i32,
     balance: i32,
 }
 

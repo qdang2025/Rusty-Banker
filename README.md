@@ -24,4 +24,4 @@ p/s: Please email qdang@umass.edu if you encounter any problems.
 ##Video Recording and Slides
 
 YouTube presentation and demonstration: 
-Slides: 
+Slides: https://docs.google.com/presentation/d/1G65yaFyIjGzbfYLfSPn2RrUm4UI_0bVYhso1IovQ7VQ/edit#slide=id.p

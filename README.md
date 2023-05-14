@@ -21,7 +21,7 @@ cargo run <num_readers> <num_workers/ledgers> <inputfile.txt>
 ```
 p/s: Please email qdang@umass.edu if you encounter any problems.
 
-##Video Recording and Slides
+## Video Recording and Slides
 
 YouTube presentation and demonstration: 
 

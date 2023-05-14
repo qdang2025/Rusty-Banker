@@ -12,5 +12,8 @@ Clone the repository to your local machine and run the following:
 cargo build
 ```
 
-
+Then, you may run the program with the following format 
+```bash 
+cargo run <num_readers> <num_workers/ledgers> <inputfile.txt>
+```
 

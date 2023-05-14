@@ -5,7 +5,7 @@ This is my final project for CS 377: Operating Systems. It is a Rust reimplement
 This project is intended to demonstrate my knowledge of concurrency and synchronization regardless of languages. 
 
 ## Installation and Setting Up
-You will need to have Rust configured on your local machine before running the program. Rust is installed via the rustup installer, which supports installation on Windows, macOS, and Linux. Follow the rustup installation guidance for your platform, taking care to install any extra tools required to build and run Rust programs.
+You will need to have Rust configured on your local machine before running the program. Rust is installed via the rustup installer, which supports installation on Windows, macOS, and Linux. Follow the rustup installation guidance for your platform and install any extra tools required to build and run Rust programs.
 
 If you are using VSCode, you will also need to install the Rust-Analyzer extension.
 
@@ -21,8 +21,7 @@ cargo run <num_readers> <num_workers/ledgers> <inputfile.txt>
 ```
 p/s: Please email qdang@umass.edu if you encounter any problems.
 
-## Description 
-This is a Rust implementation of 
-
-
 ##Video Recording and Slides
+
+YouTube presentation and demonstration: 
+Slides: 

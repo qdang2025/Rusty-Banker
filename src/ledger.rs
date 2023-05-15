@@ -52,7 +52,6 @@ fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> {
         bank: Arc::new(bank::Bank::new()),
     });
     
-    //Create a vector of lines
     let lines = Arc::new(Mutex::new(Vec::new()));
     //Open the file and handle invalid file name
     let file = match File::open(filename){

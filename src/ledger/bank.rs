@@ -18,7 +18,6 @@ impl Bank {
             let guard = self.accounts.lock().unwrap();
             println!("Account #{}: {}", i, guard[i as usize].balance);
         }
-        //let _bank_guard = self.bank_lock.lock().unwrap();
         println!("Successes: {} Fails: {}", self.num_succ.lock().unwrap(), self.num_fail.lock().unwrap());
     }
 

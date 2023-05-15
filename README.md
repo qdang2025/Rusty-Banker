@@ -1,6 +1,6 @@
 # Rusty-Banker by Quang Dang
 
-This is my final project for CS 377: Operating Systems. It is a Rust reimplementation and extension of Professor Tim Richards' Banker and Ledger project originally written in C++.
+This is my final project for CS 377: Operating Systems. It is a Rust reimplementation and extension of Professor Tim Richards' Banker and Ledger (Producer/Consumer) project originally written in C++.
 
 This project is intended to demonstrate my knowledge of concurrency and synchronization regardless of languages. 
 

@@ -14,6 +14,11 @@ After having every installed, clone the repository to your local machine and run
 ```bash
 cargo build
 ```
+Change directory to src:
+
+```bash
+cd src
+```
 
 Then, you may run the program with the following format 
 ```bash 

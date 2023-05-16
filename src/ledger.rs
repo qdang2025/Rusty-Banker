@@ -112,10 +112,8 @@ fn read_file (thread_num: i32, lines : Arc<Mutex<Vec<(String,i32)>>>, ledger_lis
                 mode: mode,
                 ledger_id: line.1,
             };
-            let guard = lines.lock().unwrap();
             print!("Reader {} has finished processing line {}\n", thread_num, line.1);
             ledger_list.ledgers.lock().unwrap().push(ledger);
-            drop(guard);
         } else {
             drop(guard);
         }

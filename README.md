@@ -2,7 +2,10 @@
 
 This is my final project for CS 377: Operating Systems. It is a Rust reimplementation and extension of Professor Tim Richards' Banker and Ledger (Producer/Consumer) project originally written in C++.
 
-This project is intended to demonstrate my knowledge of concurrency and synchronization regardless of languages. 
+## Learning Objectives
+1. Learn a new language and employ its memory management conventions (ownership and borrowing) to my own project
+2. Employ Rust's concurrency and synchronization techniques to prevent deadlocks and data races and ensure thread safety
+3. Implement a new functionality not available in the original project
 
 ## Installation and Setting Up
 You will need to have Rust configured on your local machine before running the program. Rust is installed via the rustup installer, which supports installation on Windows, macOS, and Linux. Follow the rustup installation guidance for your platform and install any extra tools required to build and run Rust programs.

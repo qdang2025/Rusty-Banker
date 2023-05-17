@@ -4,7 +4,6 @@ use std::sync::{Arc, Mutex};
 use std::thread;
 
 pub mod bank;
-
 struct Ledger {
     from: i32,
     to: i32,
@@ -66,7 +65,7 @@ fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> {
     //Push the lines into the vector
     let mut index = 0;
     for line in reader.lines() {
-        lines.lock().unwrap().push((line.unwrap(), index));
+        lines.lock().unwrap().push((line.unwrap(), Arc::new(Mutex::new(index))));
         index += 1;
     }
 
@@ -89,11 +88,12 @@ fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> {
 }
 
 //Reader thread helper function
-fn read_file (thread_num: i32, lines : Arc<Mutex<Vec<(String,i32)>>>, ledger_list: Arc<LedgerList>) {
+fn read_file (thread_num: i32, lines : Arc<Mutex<Vec<(String,Arc<Mutex<i32>>)>>>, ledger_list: Arc<LedgerList>) {
     while lines.lock().unwrap().len() > 0 {
         let mut guard = lines.lock().unwrap();
         if guard.len() != 0 {
             let line = guard.remove(0);
+            let num_line = line.1.lock().unwrap().clone();
             drop(guard);
             let mut split = line.0.split_whitespace();
             let from = split.next().unwrap().parse().unwrap();
@@ -110,10 +110,18 @@ fn read_file (thread_num: i32, lines : Arc<Mutex<Vec<(String,i32)>>>, ledger_lis
                 to: to,
                 amount: amount,
                 mode: mode,
-                ledger_id: line.1,
+                ledger_id: num_line,
             };
-            print!("Reader {} has finished processing line {}\n", thread_num, line.1);
             ledger_list.ledgers.lock().unwrap().push(ledger);
+            let guard = line.1.lock().unwrap();
+            print!("Reader {} has finished processing line {}\n", thread_num, guard.clone());
+            print!("");
+            drop(guard);
+            //Note: This print!("") macro somehow stalls the program. I have no idea why.
+            //If you comment them out, the program will run fine, but the output will sometimes 
+            //look like a thread not letting other threads take the next line and process it.
+            //The print macro kinda stalls the current thread so that other threads can take over.
+            //It could be that I'm locking incorrectly, but I'm not sure.
         } else {
             drop(guard);
         }

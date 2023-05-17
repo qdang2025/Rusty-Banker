@@ -40,7 +40,6 @@ impl Bank {
         let mut accounts = Vec::new();
         for _i in 0..10{
             accounts.push(Account {
-                //account_id: _i,
                 balance: 0,
             });
         }

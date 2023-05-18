@@ -78,6 +78,7 @@ impl Bank {
         res
     }
 
+    // Transfers money from one account to another
     pub fn transfer (&self, worker_id: i32, ledger_id: i32, from_id: i32, to_id: i32, amount: i32) -> i32 {
         //Check if both accounts are the same
         if from_id == to_id {

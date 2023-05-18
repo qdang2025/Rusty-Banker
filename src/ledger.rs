@@ -45,7 +45,7 @@ pub fn init_bank(num_readers: i32,num_workers: i32, ledger_file: &str) {
 }
 
 fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> { 
-    //Start with a new ledger list
+    // Start with a new ledger list
     let ledger_list = Arc::new(LedgerList {
         ledgers: Arc::new(Mutex::new(Vec::new())),
         bank: Arc::new(bank::Bank::new()),
@@ -60,16 +60,16 @@ fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> {
             std::process::exit(1);
         }
     };
-    //A buffered reader to read the file line by line
+    // A buffered reader to read the file line by line
     let reader = BufReader::new(file);
-    //Push the lines into the vector
+    // Push the lines into the vector
     let mut index = 0;
     for line in reader.lines() {
         lines.lock().unwrap().push((line.unwrap(), Arc::new(Mutex::new(index))));
         index += 1;
     }
 
-    //Set up a vector/list of threads
+    // Set up a vector/list of threads
     let mut threads = Vec::new();
     
     //Execute the tasks for each worker by spawning threads
@@ -80,7 +80,7 @@ fn load_ledger(num_threads: i32, filename: &str) -> Arc<LedgerList> {
             read_file(i,lines_clone, ledger_list_clone);
         }));
     }
-    //Join all the reader threads
+    // Join all the reader threads
     for thread in threads {
         thread.join().unwrap();
     }

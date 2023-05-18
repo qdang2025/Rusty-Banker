@@ -115,8 +115,9 @@ fn read_file (thread_num: i32, lines : Arc<Mutex<Vec<(String,Arc<Mutex<i32>>)>>>
             ledger_list.ledgers.lock().unwrap().push(ledger);
             let guard = line.1.lock().unwrap();
             print!("Reader {} has finished processing line {}\n", thread_num, guard.clone());
-            print!("");
+            //print!("");
             drop(guard);
+            print!("");
             //Note: This print!("") macro somehow stalls the program. I have no idea why.
             //If you comment them out, the program will run fine, but the output will sometimes 
             //look like a thread not letting other threads take the next line and process it.

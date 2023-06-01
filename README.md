@@ -1,6 +1,6 @@
 # Rusty-Banker by Quang Dang
 
-This is my final project for CS 377: Operating Systems. It is a Rust reimplementation and extension of Professor Tim Richards' Banker and Ledger (Producer/Consumer) project originally written in C++.
+This is a Rust reimplementation and extension of Professor Tim Richards' Banker and Ledger (Producer/Consumer) project originally written in C++.
 
 ## Description
 The program will parse the input text file by spawning a number of threads based on the number of file readers and bank workers given in the command line argument. The worker threads will print out the result of the transaction after finishing it.

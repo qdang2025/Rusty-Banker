@@ -30,7 +30,6 @@ Then, you may run the program with the following format
 ```bash 
 cargo run <num_readers> <num_workers/ledgers> <inputfile.txt>
 ```
-p/s: Please email qdang@umass.edu if you encounter any problems.
 
 ## Video Recording and Slides
 
